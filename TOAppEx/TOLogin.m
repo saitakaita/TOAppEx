@@ -14,20 +14,36 @@
 
 @implementation TOLogin
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+- (UITextField *)makeIdTextField:(CGRect)rect text:(NSString *)text {
+  UITextField *textField = [[[UITextField alloc] init]autorelease];
+  [textField setText:text];
+  [textField setFrame:rect];
+  [textField setReturnKeyType:UIReturnKeyDone];
+  [textField setBackgroundColor:[UIColor whiteColor]];
+  [textField setBorderStyle:UITextBorderStyleRoundedRect];
+  _idTextField.delegate = self;
+  return textField;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+- (UITextField *)makePassTextField:(CGRect)rect text:(NSString *)text {
+  UITextField *textField = [[[UITextField alloc] init]autorelease];
+  [textField setText:text];
+  [textField setFrame:rect];
+  [textField setReturnKeyType:UIReturnKeyDone];
+  [textField setBackgroundColor:[UIColor whiteColor]];
+  [textField setBorderStyle:UITextBorderStyleRoundedRect];
+  _passTextField.delegate = self;
+  return textField;
 }
+- (void)viewDidLoad {
+  [super viewDidLoad];
+ 
+  //Logo BackGround Image
+
+  _idTextField = [self makeIdTextField:CGRectMake(10, 200, 300, 32) text:@""];
+  
+}
+
 
 - (void)didReceiveMemoryWarning
 {

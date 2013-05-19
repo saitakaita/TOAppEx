@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TOLogin : UIViewController
+@interface TOLogin : UIViewController <UITextFieldDelegate> {
+  UITextField *_idTextField;
+  UITextField *_passTextField;
+}
 
 @end
