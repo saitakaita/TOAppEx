@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TOLogin.h"
 
-@interface RootViewController : UITableViewController
+@interface RootViewController : UITableViewController<TLoginDelegate> {
+  UIWindow *_window;
+  NSArray *_lists;
+  NSString *flagTest;
+}
+
+@property (nonatomic, retain) NSArray *lists;
 
 @end

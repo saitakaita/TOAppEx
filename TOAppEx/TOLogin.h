@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol TLoginDelegate
+- (void)login:(NSString *)text;
+
+@end
+
 @interface TOLogin : UIViewController <UITextFieldDelegate> {
   UITextField *_idTextField;
-  UITextField *_passTextField;
+  UITextField *_pwTextField;
 }
-
+@property (nonatomic, assign) id<TLoginDelegate>delegate;
 @end

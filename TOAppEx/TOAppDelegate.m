@@ -7,21 +7,24 @@
 //
 
 #import "TOAppDelegate.h"
-#import "TOLogin.h"
+#import "RootViewController.h"
 
 @implementation TOAppDelegate
 
 - (void)dealloc {
+  [_navigationController release];
   [_window release];
     [super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    return YES;
+  self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+  
+  RootViewController *rootView = [[[RootViewController alloc] init] autorelease];
+  _navigationController = [[UINavigationController alloc] initWithRootViewController:rootView];
+  self.window.rootViewController = _navigationController;
+  [self.window makeKeyAndVisible];
+  return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
