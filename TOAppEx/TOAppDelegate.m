@@ -21,6 +21,7 @@
   self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
   
   RootViewController *rootView = [[[RootViewController alloc] init] autorelease];
+//  TOLogin *loginView = [[[TOLogin alloc] init] autorelease];
   _navigationController = [[UINavigationController alloc] initWithRootViewController:rootView];
   self.window.rootViewController = _navigationController;
   [self.window makeKeyAndVisible];

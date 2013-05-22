@@ -52,12 +52,14 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  UIView *backgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
+  backgroundView.backgroundColor = [UIColor blackColor];
   //logo backgroundimage etc
-  
   //login textfield
   _idTextField = [self makeIdTextField:CGRectMake(10, 100, 300, 32) text:@"test"];
   _pwTextField = [self makePassTextField:CGRectMake(10, 150, 300, 32) text:@"test"];
   UIButton *btn = [self makeButton:CGRectMake(60, 200, 200, 40) text:@"login" tag:BTN_LOGIN];
+  
   [self.view addSubview:btn];
   [self.view addSubview:_idTextField];
   [self.view addSubview:_pwTextField];

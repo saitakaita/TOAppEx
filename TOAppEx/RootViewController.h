@@ -10,7 +10,7 @@
 #import "TOLogin.h"
 
 @interface RootViewController : UITableViewController<TLoginDelegate> {
-  UIWindow *_window;
+  UINavigationController *_navigationController;
   NSArray *_lists;
   NSString *flagTest;
 }
