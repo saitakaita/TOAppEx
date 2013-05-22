@@ -25,6 +25,7 @@
   if (flagTest == nil) {
     TOLogin *login = [[TOLogin alloc] init];
     login.delegate = self;
+    [login setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
     [self presentViewController:login animated:NO completion:nil];
   }
   self.title = @"Menu";
@@ -109,10 +110,8 @@
 }
 
 - (void)login:(NSString *)text {
-  LOG(@"tyamada:login test");
   
-  [self setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-  [self.navigationController dismissViewController:self completion:NULL];
+  [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 
