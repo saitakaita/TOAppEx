@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class UserId;
+
 @protocol TLoginDelegate
 - (void)login:(NSString *)text;
 
@@ -18,4 +20,6 @@
   UITextField *_pwTextField;
 }
 @property (nonatomic, assign) id<TLoginDelegate>delegate;
+@property (nonatomic, retain) UserId *idPass;
+
 @end
