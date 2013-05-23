@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "UserId.h"
 
 @interface RootViewController ()
 
@@ -111,7 +112,11 @@
 
 - (void)login:(NSString *)text {
   
+  
+  
   [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
+
+
 }
 
 

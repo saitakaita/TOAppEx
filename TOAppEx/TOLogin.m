@@ -7,6 +7,7 @@
 //
 
 #import "TOLogin.h"
+#import "UserId.h"
 #define LOGIN_FLG   @"OK"
 #define BTN_LOGIN   1
 
@@ -16,6 +17,12 @@
 @end
 
 @implementation TOLogin
+
+- (void)dealloc {
+  self.idPass = nil;
+  
+  [super dealloc];
+}
 
 - (UITextField *)makeIdTextField:(CGRect)rect text:(NSString *)text {
   UITextField *textField = [[[UITextField alloc] init]autorelease];
@@ -66,7 +73,6 @@
 }
 
 - (void)login:(id)sender {
-  LOG(@"test");
   [self.delegate login:nil];
 
 }
