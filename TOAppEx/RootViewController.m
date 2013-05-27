@@ -33,7 +33,7 @@
   
   self.lists = [NSArray arrayWithObjects:
                 @"TMemoViewController",
-                @"WebViewController",
+                @"WebSearchController",
                 nil];
 }
 

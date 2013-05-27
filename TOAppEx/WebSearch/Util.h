@@ -10,4 +10,7 @@
 
 @interface Util : NSObject
 
++ (NSString *)urlencode:(NSString *)text;
++ (NSString *)urldecode:(NSString *)text;
+
 @end

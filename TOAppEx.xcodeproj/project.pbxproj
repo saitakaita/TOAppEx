@@ -26,7 +26,6 @@
 		9004C65C174F0311007F1DA2 /* TMemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C659174F0311007F1DA2 /* TMemo.m */; };
 		9004C65D174F0311007F1DA2 /* TDaoMemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C65B174F0311007F1DA2 /* TDaoMemo.m */; };
 		9004C65F174F043E007F1DA2 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9004C65E174F043E007F1DA2 /* libsqlite3.0.dylib */; };
-		9004C663174F0A7F007F1DA2 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C662174F0A7F007F1DA2 /* WebViewController.m */; };
 		9004C66A174F319E007F1DA2 /* WebSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C669174F319E007F1DA2 /* WebSearchController.m */; };
 		9004C66D174F3202007F1DA2 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C66C174F3202007F1DA2 /* WebViewController.m */; };
 		9004C670174F321C007F1DA2 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C66F174F321C007F1DA2 /* Util.m */; };
@@ -66,8 +65,6 @@
 		9004C65A174F0311007F1DA2 /* TDaoMemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDaoMemo.h; sourceTree = "<group>"; };
 		9004C65B174F0311007F1DA2 /* TDaoMemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDaoMemo.m; sourceTree = "<group>"; };
 		9004C65E174F043E007F1DA2 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		9004C661174F0A7F007F1DA2 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
-		9004C662174F0A7F007F1DA2 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		9004C668174F319E007F1DA2 /* WebSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSearchController.h; sourceTree = "<group>"; };
 		9004C669174F319E007F1DA2 /* WebSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSearchController.m; sourceTree = "<group>"; };
 		9004C66B174F3202007F1DA2 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -126,7 +123,6 @@
 			children = (
 				9004C664174F19D6007F1DA2 /* WebSearch */,
 				90A06EF4174DB65000D2295D /* FMDB */,
-				9004C660174F08A6007F1DA2 /* WebView */,
 				90776A49174E1208008F9ED7 /* Model */,
 				90A06EF1174DB5DF00D2295D /* Memo */,
 				7693B77717491E9B0039F65F /* TOAppDelegate.h */,
@@ -152,15 +148,6 @@
 				7693B77E17491E9B0039F65F /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9004C660174F08A6007F1DA2 /* WebView */ = {
-			isa = PBXGroup;
-			children = (
-				9004C661174F0A7F007F1DA2 /* WebViewController.h */,
-				9004C662174F0A7F007F1DA2 /* WebViewController.m */,
-			);
-			path = WebView;
 			sourceTree = "<group>";
 		};
 		9004C664174F19D6007F1DA2 /* WebSearch */ = {
@@ -307,7 +294,6 @@
 				9004C657174F02D3007F1DA2 /* TEditMemoViewController.m in Sources */,
 				9004C65C174F0311007F1DA2 /* TMemo.m in Sources */,
 				9004C65D174F0311007F1DA2 /* TDaoMemo.m in Sources */,
-				9004C663174F0A7F007F1DA2 /* WebViewController.m in Sources */,
 				9004C66A174F319E007F1DA2 /* WebSearchController.m in Sources */,
 				9004C66D174F3202007F1DA2 /* WebViewController.m in Sources */,
 				9004C670174F321C007F1DA2 /* Util.m in Sources */,
