@@ -32,8 +32,8 @@
   self.title = @"Menu";
   
   self.lists = [NSArray arrayWithObjects:
-                @"TOLogin",
-                @"b",
+                @"TMemoViewController",
+                @"WebViewController",
                 nil];
 }
 
