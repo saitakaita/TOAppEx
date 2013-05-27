@@ -18,6 +18,17 @@
 		7693B77F17491E9B0039F65F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7693B77E17491E9B0039F65F /* Default-568h@2x.png */; };
 		7693B787174923610039F65F /* TOLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7693B786174923610039F65F /* TOLogin.m */; };
 		7693B78A1749237A0039F65F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7693B7891749237A0039F65F /* RootViewController.m */; };
+		9004C64F174F02A1007F1DA2 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C64A174F02A1007F1DA2 /* FMDatabase.m */; };
+		9004C650174F02A1007F1DA2 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C64C174F02A1007F1DA2 /* FMDatabaseAdditions.m */; };
+		9004C651174F02A1007F1DA2 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C64E174F02A1007F1DA2 /* FMResultSet.m */; };
+		9004C656174F02D3007F1DA2 /* TMemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C653174F02D3007F1DA2 /* TMemoViewController.m */; };
+		9004C657174F02D3007F1DA2 /* TEditMemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C655174F02D3007F1DA2 /* TEditMemoViewController.m */; };
+		9004C65C174F0311007F1DA2 /* TMemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C659174F0311007F1DA2 /* TMemo.m */; };
+		9004C65D174F0311007F1DA2 /* TDaoMemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C65B174F0311007F1DA2 /* TDaoMemo.m */; };
+		9004C65F174F043E007F1DA2 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9004C65E174F043E007F1DA2 /* libsqlite3.0.dylib */; };
+		9004C66A174F319E007F1DA2 /* WebSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C669174F319E007F1DA2 /* WebSearchController.m */; };
+		9004C66D174F3202007F1DA2 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C66C174F3202007F1DA2 /* WebViewController.m */; };
+		9004C670174F321C007F1DA2 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C66F174F321C007F1DA2 /* Util.m */; };
 		90776A4C174E1262008F9ED7 /* UserId.m in Sources */ = {isa = PBXBuildFile; fileRef = 90776A4B174E1262008F9ED7 /* UserId.m */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +50,27 @@
 		7693B786174923610039F65F /* TOLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOLogin.m; sourceTree = "<group>"; };
 		7693B7881749237A0039F65F /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		7693B7891749237A0039F65F /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		9004C649174F02A1007F1DA2 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		9004C64A174F02A1007F1DA2 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		9004C64B174F02A1007F1DA2 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		9004C64C174F02A1007F1DA2 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		9004C64D174F02A1007F1DA2 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		9004C64E174F02A1007F1DA2 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		9004C652174F02D3007F1DA2 /* TMemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMemoViewController.h; sourceTree = "<group>"; };
+		9004C653174F02D3007F1DA2 /* TMemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMemoViewController.m; sourceTree = "<group>"; };
+		9004C654174F02D3007F1DA2 /* TEditMemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEditMemoViewController.h; sourceTree = "<group>"; };
+		9004C655174F02D3007F1DA2 /* TEditMemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEditMemoViewController.m; sourceTree = "<group>"; };
+		9004C658174F0311007F1DA2 /* TMemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMemo.h; sourceTree = "<group>"; };
+		9004C659174F0311007F1DA2 /* TMemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMemo.m; sourceTree = "<group>"; };
+		9004C65A174F0311007F1DA2 /* TDaoMemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDaoMemo.h; sourceTree = "<group>"; };
+		9004C65B174F0311007F1DA2 /* TDaoMemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDaoMemo.m; sourceTree = "<group>"; };
+		9004C65E174F043E007F1DA2 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		9004C668174F319E007F1DA2 /* WebSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSearchController.h; sourceTree = "<group>"; };
+		9004C669174F319E007F1DA2 /* WebSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSearchController.m; sourceTree = "<group>"; };
+		9004C66B174F3202007F1DA2 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		9004C66C174F3202007F1DA2 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		9004C66E174F321C007F1DA2 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		9004C66F174F321C007F1DA2 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		90776A4A174E1262008F9ED7 /* UserId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserId.h; sourceTree = "<group>"; };
 		90776A4B174E1262008F9ED7 /* UserId.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserId.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9004C65F174F043E007F1DA2 /* libsqlite3.0.dylib in Frameworks */,
 				7693B76917491E9B0039F65F /* UIKit.framework in Frameworks */,
 				7693B76B17491E9B0039F65F /* Foundation.framework in Frameworks */,
 				7693B76D17491E9B0039F65F /* CoreGraphics.framework in Frameworks */,
@@ -60,6 +93,7 @@
 		7693B75C17491E9B0039F65F = {
 			isa = PBXGroup;
 			children = (
+				9004C65E174F043E007F1DA2 /* libsqlite3.0.dylib */,
 				7693B76E17491E9B0039F65F /* TOAppEx */,
 				7693B76717491E9B0039F65F /* Frameworks */,
 				7693B76617491E9B0039F65F /* Products */,
@@ -87,6 +121,9 @@
 		7693B76E17491E9B0039F65F /* TOAppEx */ = {
 			isa = PBXGroup;
 			children = (
+				9004C664174F19D6007F1DA2 /* WebSearch */,
+				90A06EF4174DB65000D2295D /* FMDB */,
+				90776A49174E1208008F9ED7 /* Model */,
 				90A06EF1174DB5DF00D2295D /* Memo */,
 				7693B77717491E9B0039F65F /* TOAppDelegate.h */,
 				7693B77817491E9B0039F65F /* TOAppDelegate.m */,
@@ -113,21 +150,31 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9004C664174F19D6007F1DA2 /* WebSearch */ = {
+			isa = PBXGroup;
+			children = (
+				9004C668174F319E007F1DA2 /* WebSearchController.h */,
+				9004C669174F319E007F1DA2 /* WebSearchController.m */,
+				9004C66B174F3202007F1DA2 /* WebViewController.h */,
+				9004C66C174F3202007F1DA2 /* WebViewController.m */,
+				9004C66E174F321C007F1DA2 /* Util.h */,
+				9004C66F174F321C007F1DA2 /* Util.m */,
+			);
+			path = WebSearch;
+			sourceTree = "<group>";
+		};
 		90776A49174E1208008F9ED7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				90776A4A174E1262008F9ED7 /* UserId.h */,
 				90776A4B174E1262008F9ED7 /* UserId.m */,
 			);
-			name = Model;
-			path = ../Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		90A06EF1174DB5DF00D2295D /* Memo */ = {
 			isa = PBXGroup;
 			children = (
-				90776A49174E1208008F9ED7 /* Model */,
-				90A06EF4174DB65000D2295D /* FMDB */,
 				90A06EF3174DB63C00D2295D /* View&Controller */,
 				90A06EF2174DB62E00D2295D /* Model */,
 			);
@@ -137,6 +184,10 @@
 		90A06EF2174DB62E00D2295D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9004C658174F0311007F1DA2 /* TMemo.h */,
+				9004C659174F0311007F1DA2 /* TMemo.m */,
+				9004C65A174F0311007F1DA2 /* TDaoMemo.h */,
+				9004C65B174F0311007F1DA2 /* TDaoMemo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,6 +195,10 @@
 		90A06EF3174DB63C00D2295D /* View&Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9004C652174F02D3007F1DA2 /* TMemoViewController.h */,
+				9004C653174F02D3007F1DA2 /* TMemoViewController.m */,
+				9004C654174F02D3007F1DA2 /* TEditMemoViewController.h */,
+				9004C655174F02D3007F1DA2 /* TEditMemoViewController.m */,
 			);
 			path = "View&Controller";
 			sourceTree = "<group>";
@@ -151,8 +206,15 @@
 		90A06EF4174DB65000D2295D /* FMDB */ = {
 			isa = PBXGroup;
 			children = (
+				9004C649174F02A1007F1DA2 /* FMDatabase.h */,
+				9004C64A174F02A1007F1DA2 /* FMDatabase.m */,
+				9004C64B174F02A1007F1DA2 /* FMDatabaseAdditions.h */,
+				9004C64C174F02A1007F1DA2 /* FMDatabaseAdditions.m */,
+				9004C64D174F02A1007F1DA2 /* FMResultSet.h */,
+				9004C64E174F02A1007F1DA2 /* FMResultSet.m */,
 			);
-			path = FMDB;
+			name = FMDB;
+			path = Memo/FMDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +287,16 @@
 				7693B787174923610039F65F /* TOLogin.m in Sources */,
 				7693B78A1749237A0039F65F /* RootViewController.m in Sources */,
 				90776A4C174E1262008F9ED7 /* UserId.m in Sources */,
+				9004C64F174F02A1007F1DA2 /* FMDatabase.m in Sources */,
+				9004C650174F02A1007F1DA2 /* FMDatabaseAdditions.m in Sources */,
+				9004C651174F02A1007F1DA2 /* FMResultSet.m in Sources */,
+				9004C656174F02D3007F1DA2 /* TMemoViewController.m in Sources */,
+				9004C657174F02D3007F1DA2 /* TEditMemoViewController.m in Sources */,
+				9004C65C174F0311007F1DA2 /* TMemo.m in Sources */,
+				9004C65D174F0311007F1DA2 /* TDaoMemo.m in Sources */,
+				9004C66A174F319E007F1DA2 /* WebSearchController.m in Sources */,
+				9004C66D174F3202007F1DA2 /* WebViewController.m in Sources */,
+				9004C670174F321C007F1DA2 /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
