@@ -26,7 +26,9 @@
 {
   [super viewDidLoad];
   
-  self.view.backgroundColor = [UIColor whiteColor];
+  UIImage *bgImage = [UIImage imageNamed:@"background.png"];
+  self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
+//  self.view.backgroundColor = [UIColor whiteColor];
   
   UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
   self.navigationItem.rightBarButtonItem = doneButton;
@@ -41,7 +43,7 @@
 //  
   
   _mainTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 300, 200)];
-  _mainTextField.borderStyle = UIBarStyleBlack;
+//  _mainTextField.borderStyle = UIBarStyleBlack;
   [self.view addSubview:_mainTextField];
   _mainTextField.delegate = self;
   
@@ -51,7 +53,7 @@
     _mainTextField.text = self.memo.note;
     
   } else {
-    _mainTextField.placeholder = NSLocalizedString(@"MEMO_EDIT_PROMPT_MEMO", @"");
+//    _mainTextField.placeholder = NSLocalizedString(@"MEMO_EDIT_PROMPT_MEMO", @"");
     
     //キャンセルボタン
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];

@@ -73,8 +73,8 @@
 }
 
 // セクションタイトル
-- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-  for (int i = 0; i < [dateSection count]; i++) {
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  for (int i=0; i < [dateSection count]; i++) {
     if (section == i) {
       NSString *str = [[NSString alloc] initWithFormat:@"%@ 検索履歴",[dateSection objectAtIndex:i]];
       return str;
@@ -118,7 +118,7 @@
   
   for (int i=0; i < [dateSection count]; i++) {
     if (indexPath.section == i) {
-      FMResultSet *fResult = [db executeQuery:@"select * from words whrere date = ? order by id desc", [dateSection objectAtIndex:i]];
+      FMResultSet *fResult = [db executeQuery:@"select * from words where date = ? order by id desc", [dateSection objectAtIndex:i]];
       while ([fResult next]) {
         iData = [fResult stringForColumn:@"words"];
         [wArray addObject:iData];
@@ -158,6 +158,7 @@
 }
 
 - (void)hoge:(UITextField *)textField {
+  LOG(@"hoge:text--%@",textField);
   NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
   NSString *dir  = [paths objectAtIndex:0];
   FMDatabase *db = [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"searchLog.sqlite"]];
@@ -172,11 +173,12 @@
   [formatter setDateStyle:NSDateFormatterMediumStyle];
   [formatter setLocale:local_ja];
   NSString *strTime = [[NSString alloc] initWithFormat:@"%@", [formatter stringFromDate:today]];
-  
+  LOG(@"strWords:%@",strWords);
+  LOG(@"strTime:%@",strTime);
   [db open];
   [db executeUpdate:sqll];
   [db beginTransaction];
-  [db executeUpdate:@"INSERT INTO words (words,date) VALES (?, ?)", strWords, strTime];
+  [db executeUpdate:@"INSERT INTO words (words,date) VALUES (?, ?)", strWords, strTime];
   [db commit];
   [db close];
   
