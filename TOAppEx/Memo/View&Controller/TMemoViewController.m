@@ -10,7 +10,10 @@
 #import "TDaoMemo.h"
 #import "TMemo.h"
 
-@interface TMemoViewController ()
+@interface TMemoViewController () {
+  @private
+  int indexNumber;
+}
 @property (nonatomic, retain) TDaoMemo *deoMemo;
 @property (nonatomic, retain) NSMutableArray *memos;
 @property (nonatomic, retain) NSMutableArray *list;
@@ -64,6 +67,7 @@
 - (void)dealloc {
   self.deoMemo = nil;
   self.memos = nil;
+  indexNumber = 0;
   
   [super dealloc];
 }
@@ -91,7 +95,7 @@
 //指定セルの取得
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  LOG(@"cellForRowAtIndexPath:%@",indexPath);
+//  LOG(@"cellForRowAtIndexPath:%@",indexPath);
   static NSString *CellIdentifier = @"Cell";
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   //cell.textLabel.text = [NSString stringWithFormat:@"項目 %d",indexPath.row];
@@ -110,6 +114,8 @@
   TEditMemoViewController *editor = [[TEditMemoViewController alloc] init];
   editor.delegate = self;
   editor.memo = [self.list objectAtIndex:indexPath.row];
+  indexNumber = indexPath.row;
+  LOG(@"indexNumber:%d",indexNumber);
   //editor.memo = [self.memos objectAtIndex:indexPath.row];
   
 //  UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:editor];
@@ -141,11 +147,14 @@
 
 - (void)editMemoDidFinish:(TMemo *)oldMemo newMemo:(TMemo *)newMemo {
 //    TMemo *memo = [[[TMemo alloc] init] autorelease];
+//  LOG(@"editMemoDidFinish newMemo:%@",newMemo);
   if ([oldMemo.note isEqualToString:newMemo.note]) {
     LOG(@"true");
   } else {
-    [self.memos replaceObjectAtIndex:newMemo.memoId -1 withObject:newMemo.note];
-    [self.list replaceObjectAtIndex:oldMemo.memoId -1 withObject:newMemo];
+    LOG(@"editMemoDidFinish indexNumber:%d",indexNumber);
+    [self.memos replaceObjectAtIndex:indexNumber  withObject:newMemo.note];
+//    LOG(@"oldMemo.memoId:%d",oldMemo.memoId -1);
+    [self.list replaceObjectAtIndex:indexNumber withObject:newMemo];
     [self.deoMemo update:newMemo];
 //    [self removeOldMemo:oldMemo];
   }
@@ -177,7 +186,8 @@
   for (TMemo *memo in List) {
     //LOG(@"addNewMemo>memo:%@",memo);
     [self.memos addObject:memo.note];
-//    LOG(@"self.memos:%@",self.memos);
+    LOG(@"self.memos:%@",self.memos);
+    LOG(@"memos.count:%d",self.memos.count);
   }
 }
 
@@ -188,6 +198,7 @@
   
   [self.tableView beginUpdates];
   [self.list removeObjectAtIndex:indexPath.row];
+  [self.memos removeObjectAtIndex:indexPath.row];
   LOG(@"NSArray:%@",indexPath);
   [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
 
