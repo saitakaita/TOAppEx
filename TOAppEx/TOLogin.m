@@ -39,6 +39,7 @@
   UITextField *textField = [[[UITextField alloc] init]autorelease];
   [textField setText:text];
   [textField setFrame:rect];
+  [textField setSecureTextEntry:YES];
   [textField setReturnKeyType:UIReturnKeyDone];
   [textField setBackgroundColor:[UIColor whiteColor]];
   [textField setBorderStyle:UITextBorderStyleRoundedRect];
