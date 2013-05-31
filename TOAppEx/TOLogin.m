@@ -74,8 +74,29 @@
 }
 
 - (void)login:(id)sender {
+  [_pwTextField resignFirstResponder];
+  NSMutableDictionary *mutableDic = [NSMutableDictionary dictionary];
+  [mutableDic setValue:_idTextField forKey:@"username"];
+  [mutableDic setValue:_pwTextField forKey:@"passwd"];
+  
+  NSError *error = nil;
+  NSData *jsonData = [NSJSONSerialization dataWithJSONObject:mutableDic options:kNilOptions error:&error];
+  NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+  
+  NSURL *url = [NSURL URLWithString:@"http://yamada.dev/api/json/api.php"];
+  
+  NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+  NSData *requestData = [NSData dataWithBytes:[jsonStr UTF8String] length:[jsonStr length]];
+  [request setHTTPMethod:@"POST"];
+  [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+  [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+  [request setValue:[NSString stringWithFormat:@"%d", [requestData length]] forHTTPHeaderField:@"Content-Length"];
+  [request setHTTPBody:requestData];
+  
+  [NSURLConnection connectionWithRequest:request delegate:self];
+  
   [self.delegate login:nil];
-
+  
 }
 
 
