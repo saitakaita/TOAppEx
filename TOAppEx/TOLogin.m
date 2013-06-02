@@ -25,14 +25,14 @@
 }
 
 - (UITextField *)makeIdTextField:(CGRect)rect text:(NSString *)text {
-  UITextField *textField = [[[UITextField alloc] init]autorelease];
-  [textField setText:text];
-  [textField setFrame:rect];
-  [textField setReturnKeyType:UIReturnKeyDone];
-  [textField setBackgroundColor:[UIColor whiteColor]];
-  [textField setBorderStyle:UITextBorderStyleRoundedRect];
+  UITextField *username = [[[UITextField alloc] init]autorelease];
+  [username setText:text];
+  [username setFrame:rect];
+  [username setReturnKeyType:UIReturnKeyNext];
+  [username setBackgroundColor:[UIColor whiteColor]];
+  [username setBorderStyle:UITextBorderStyleRoundedRect];
   _idTextField.delegate = self;
-  return textField;
+  return username;
 }
 
 - (UITextField *)makePassTextField:(CGRect)rect text:(NSString *)text {
@@ -52,6 +52,7 @@
   [button setFrame:rect];
   [button setTitle:text forState:UIControlStateNormal];
   [button setTag:tag];
+//  [button addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
   [button addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
   
   return button;
@@ -64,8 +65,8 @@
   backgroundView.backgroundColor = [UIColor blackColor];
   //logo backgroundimage etc
   //login textfield
-  _idTextField = [self makeIdTextField:CGRectMake(10, 100, 300, 32) text:@"test"];
-  _pwTextField = [self makePassTextField:CGRectMake(10, 150, 300, 32) text:@"test"];
+  _idTextField = [self makeIdTextField:CGRectMake(10, 100, 300, 32) text:@"yamada"];
+  _pwTextField = [self makePassTextField:CGRectMake(10, 150, 300, 32) text:@"yamada10"];
   UIButton *btn = [self makeButton:CGRectMake(60, 200, 200, 40) text:@"login" tag:BTN_LOGIN];
   
   [self.view addSubview:btn];
@@ -76,14 +77,14 @@
 - (void)login:(id)sender {
   [_pwTextField resignFirstResponder];
   NSMutableDictionary *mutableDic = [NSMutableDictionary dictionary];
-  [mutableDic setValue:_idTextField forKey:@"username"];
-  [mutableDic setValue:_pwTextField forKey:@"passwd"];
-  
+  [mutableDic setValue:_idTextField.text forKey:@"username"];
+  [mutableDic setValue:_pwTextField.text forKey:@"passwd"];
+  LOG(@"mutableDic:%@",mutableDic);
   NSError *error = nil;
   NSData *jsonData = [NSJSONSerialization dataWithJSONObject:mutableDic options:kNilOptions error:&error];
   NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
   
-  NSURL *url = [NSURL URLWithString:@"http://yamada.dev/api/json/api.php"];
+  NSURL *url = [NSURL URLWithString:@"http://yamato.main.jp/app/json/api.php"];
   
   NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
   NSData *requestData = [NSData dataWithBytes:[jsonStr UTF8String] length:[jsonStr length]];
@@ -95,8 +96,25 @@
   
   [NSURLConnection connectionWithRequest:request delegate:self];
   
-  [self.delegate login:nil];
-  
+//  [self.delegate login:nil];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+  NSMutableData *success = [NSMutableData data];
+  LOG(@"success:%@",success);
+  [success appendData:data];
+  NSString *response = [[NSString alloc] initWithData:success encoding:NSASCIIStringEncoding];
+  LOG(@"Data:%@",response);
+  if ([response isEqualToString:@"OK"]) {
+    [self.delegate login:nil];
+  } else {
+    UIAlertView *alert = [[UIAlertView alloc] init];
+    alert.title = @"error";
+    alert.message = @"usernameが違います";
+    [alert addButtonWithTitle:@"確認"];
+    [alert show];
+    
+  }
 }
 
 

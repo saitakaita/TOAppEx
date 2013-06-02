@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7600CF84175B4EFA008F8DEE /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7600CF83175B4EFA008F8DEE /* BaseController.m */; };
 		7693B76917491E9B0039F65F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693B76817491E9B0039F65F /* UIKit.framework */; };
 		7693B76B17491E9B0039F65F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693B76A17491E9B0039F65F /* Foundation.framework */; };
 		7693B76D17491E9B0039F65F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693B76C17491E9B0039F65F /* CoreGraphics.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7600CF82175B4EFA008F8DEE /* BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseController.h; sourceTree = "<group>"; };
+		7600CF83175B4EFA008F8DEE /* BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseController.m; sourceTree = "<group>"; };
 		7693B76517491E9B0039F65F /* TOAppEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TOAppEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7693B76817491E9B0039F65F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7693B76A17491E9B0039F65F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -76,8 +79,8 @@
 		9004C66F174F321C007F1DA2 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		9043C6FE1756E05B00947415 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		9043C7021756E2B300947415 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9043C7041756E2D800947415 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9043C7061756E2EC00947415 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9043C7041756E2D800947415 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9043C7061756E2EC00947415 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		905EB33E1755FD49007D580D /* _background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _background.png; sourceTree = "<group>"; };
 		90776A4A174E1262008F9ED7 /* UserId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserId.h; sourceTree = "<group>"; };
 		90776A4B174E1262008F9ED7 /* UserId.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserId.m; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 				7693B786174923610039F65F /* TOLogin.m */,
 				7693B7881749237A0039F65F /* RootViewController.h */,
 				7693B7891749237A0039F65F /* RootViewController.m */,
+				7600CF82175B4EFA008F8DEE /* BaseController.h */,
+				7600CF83175B4EFA008F8DEE /* BaseController.m */,
 			);
 			path = TOAppEx;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				9004C66A174F319E007F1DA2 /* WebSearchController.m in Sources */,
 				9004C66D174F3202007F1DA2 /* WebViewController.m in Sources */,
 				9004C670174F321C007F1DA2 /* Util.m in Sources */,
+				7600CF84175B4EFA008F8DEE /* BaseController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
