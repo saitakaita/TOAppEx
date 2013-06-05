@@ -60,18 +60,31 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+
+  UIImage *imageV = [UIImage imageNamed:@"login.png"];
+  UIImageView *bgImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+  self.view.backgroundColor = bgImage;
+  self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
   
-  UIView *backgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
-  backgroundView.backgroundColor = [UIColor blackColor];
+  [bgImage release];
+  
+//  UIImage *bgImage = [UIImage imageNamed:@"login.png"];
+//  UIView *backgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
+//  backgroundView.backgroundColor = [UIColor blackColor];
+//  self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
+  
+//  backgroundView.backgroundColor = [UIColor colorWithPatternImage:bgImage];
+  //[bgImage release];
   //logo backgroundimage etc
   //login textfield
-  _idTextField = [self makeIdTextField:CGRectMake(10, 100, 300, 32) text:@"yamada"];
-  _pwTextField = [self makePassTextField:CGRectMake(10, 150, 300, 32) text:@"yamada10"];
-  UIButton *btn = [self makeButton:CGRectMake(60, 200, 200, 40) text:@"login" tag:BTN_LOGIN];
+  _idTextField = [self makeIdTextField:CGRectMake(10, 150, 300, 32) text:@"yamada"];
+  _pwTextField = [self makePassTextField:CGRectMake(10, 200, 300, 32) text:@"yamada10"];
+  UIButton *btn = [self makeButton:CGRectMake(60, 250, 200, 40) text:@"login" tag:BTN_LOGIN];
   
   [self.view addSubview:btn];
   [self.view addSubview:_idTextField];
   [self.view addSubview:_pwTextField];
+
 }
 
 - (void)login:(id)sender {
