@@ -30,9 +30,10 @@
 		9004C66A174F319E007F1DA2 /* WebSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C669174F319E007F1DA2 /* WebSearchController.m */; };
 		9004C66D174F3202007F1DA2 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C66C174F3202007F1DA2 /* WebViewController.m */; };
 		9004C670174F321C007F1DA2 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 9004C66F174F321C007F1DA2 /* Util.m */; };
+		90433B5B176090AC008CECF3 /* login-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90433B5A176090AC008CECF3 /* login-568h@2x.png */; };
+		90433B5D17609728008CECF3 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 90433B5C17609728008CECF3 /* login.png */; };
 		9043C6FF1756E05B00947415 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9043C6FE1756E05B00947415 /* background.png */; };
 		9043C7031756E2D800947415 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9043C7051756E2D800947415 /* Localizable.strings */; };
-		905B8770175F39C700969131 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 905B876F175F39C700969131 /* login.png */; };
 		905EB33F1755FD49007D580D /* _background.png in Resources */ = {isa = PBXBuildFile; fileRef = 905EB33E1755FD49007D580D /* _background.png */; };
 		90776A4C174E1262008F9ED7 /* UserId.m in Sources */ = {isa = PBXBuildFile; fileRef = 90776A4B174E1262008F9ED7 /* UserId.m */; };
 /* End PBXBuildFile section */
@@ -78,11 +79,12 @@
 		9004C66C174F3202007F1DA2 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		9004C66E174F321C007F1DA2 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		9004C66F174F321C007F1DA2 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		90433B5A176090AC008CECF3 /* login-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-568h@2x.png"; sourceTree = "<group>"; };
+		90433B5C17609728008CECF3 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
 		9043C6FE1756E05B00947415 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		9043C7021756E2B300947415 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9043C7041756E2D800947415 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9043C7061756E2EC00947415 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		905B876F175F39C700969131 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
 		905EB33E1755FD49007D580D /* _background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _background.png; sourceTree = "<group>"; };
 		90776A4A174E1262008F9ED7 /* UserId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserId.h; sourceTree = "<group>"; };
 		90776A4B174E1262008F9ED7 /* UserId.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserId.m; sourceTree = "<group>"; };
@@ -140,7 +142,8 @@
 				90A06EF1174DB5DF00D2295D /* Memo */,
 				7693B77717491E9B0039F65F /* TOAppDelegate.h */,
 				7693B77817491E9B0039F65F /* TOAppDelegate.m */,
-				905B876F175F39C700969131 /* login.png */,
+				90433B5C17609728008CECF3 /* login.png */,
+				90433B5A176090AC008CECF3 /* login-568h@2x.png */,
 				7693B76F17491E9B0039F65F /* Supporting Files */,
 				7693B785174923610039F65F /* TOLogin.h */,
 				7693B786174923610039F65F /* TOLogin.m */,
@@ -295,7 +298,8 @@
 				905EB33F1755FD49007D580D /* _background.png in Resources */,
 				9043C6FF1756E05B00947415 /* background.png in Resources */,
 				9043C7031756E2D800947415 /* Localizable.strings in Resources */,
-				905B8770175F39C700969131 /* login.png in Resources */,
+				90433B5B176090AC008CECF3 /* login-568h@2x.png in Resources */,
+				90433B5D17609728008CECF3 /* login.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

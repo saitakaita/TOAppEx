@@ -61,17 +61,16 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  UIImage *imageV = [UIImage imageNamed:@"login.png"];
-  UIImageView *bgImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-  self.view.backgroundColor = bgImage;
-  self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//  UIImage *imageV = [UIImage imageNamed:@"login.png"];
+//  [imageV drawAtPoint:CGPointMake(0, 0)];
   
-  [bgImage release];
   
-//  UIImage *bgImage = [UIImage imageNamed:@"login.png"];
+//  [imageV release];
+  
+  UIImage *bgImage = [UIImage imageNamed:@"login.png"];
 //  UIView *backgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
 //  backgroundView.backgroundColor = [UIColor blackColor];
-//  self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
+  self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
   
 //  backgroundView.backgroundColor = [UIColor colorWithPatternImage:bgImage];
   //[bgImage release];
