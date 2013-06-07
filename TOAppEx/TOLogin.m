@@ -12,6 +12,8 @@
 #define BTN_LOGIN   1
 
 @interface TOLogin ()
+
+
 - (void)login:(id)sender;
 
 @end
@@ -58,19 +60,49 @@
   return button;
 }
 
+//+ (UIImage *)getImageNamed:(NSString *)imageName {
+//  NSMutableString *imageNameMutable = [[imageName mutableCopy] autorelease];
+//  CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+//  if ([UIScreen mainScreen].scale == 2.0f && screenHeight == 568.0f) {
+//    NSRange dot = [imageName rangeOfString:@"."]
+//    ;
+//    if (dot.location != NSNotFound) {
+//      [imageNameMutable insertString:@"-568h" atIndex:dot.location];
+//    } else {
+//      [imageNameMutable appendString:@"-568h"];
+//    }
+//  }
+//  UIImage *image = [UIImage imageNamed:imageNameMutable];
+//  if (!image) {
+//    image = [UIImage imageNamed:imageName];
+//  }
+//  return image;
+//}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-//  UIImage *imageV = [UIImage imageNamed:@"login.png"];
-//  [imageV drawAtPoint:CGPointMake(0, 0)];
-  
-  
-//  [imageV release];
-  
-  UIImage *bgImage = [UIImage imageNamed:@"login.png"];
+  UIAlertView *alert = [[UIAlertView alloc]init];
+  UIImage *image;
+  CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+  if ([UIScreen mainScreen].scale == 2.f && screenHeight == 568.0f) {
+    alert.delegate = self;
+    alert.title = @"retina";
+    [alert addButtonWithTitle:@"cancel"];
+    [alert addButtonWithTitle:@"yes"];
+    alert.cancelButtonIndex = 0;
+    
+    image = [UIImage imageNamed:@"p-568@2x.png"];
+  } else {
+    alert.title = @"3gs";
+    image = [UIImage imageNamed:@"p.png"];
+  }
+  [alert show];
+  self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+//  UIImage *bgImage = [UIImage imageNamed:@"p.png"];
 //  UIView *backgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
 //  backgroundView.backgroundColor = [UIColor blackColor];
-  self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
+//  self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
   
 //  backgroundView.backgroundColor = [UIColor colorWithPatternImage:bgImage];
   //[bgImage release];
