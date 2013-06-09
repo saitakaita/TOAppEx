@@ -8,14 +8,13 @@
 
 #import "TOLogin.h"
 #import "UserId.h"
+#import "AccountCreateWebView.h"
 #define LOGIN_FLG   @"OK"
 #define BTN_LOGIN   1
 
 @interface TOLogin ()
-
-
 - (void)login:(id)sender;
-
+- (void)accountCreate:(id)sender;
 @end
 
 @implementation TOLogin
@@ -49,16 +48,16 @@
   return textField;
 }
 
-- (UIButton *)makeButton:(CGRect)rect text:(NSString *)text tag:(int)tag {
-  UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-  [button setFrame:rect];
-  [button setTitle:text forState:UIControlStateNormal];
-  [button setTag:tag];
+//- (UIButton *)makeButton:(CGRect)rect text:(NSString *)text tag:(int)tag {
+//  UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//  [button setFrame:rect];
+//  [button setTitle:text forState:UIControlStateNormal];
+//  [button setTag:tag];
+////  [button addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
 //  [button addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
-  [button addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
-  
-  return button;
-}
+//  
+//  return button;
+//}
 
 //+ (UIImage *)getImageNamed:(NSString *)imageName {
 //  NSMutableString *imageNameMutable = [[imageName mutableCopy] autorelease];
@@ -81,41 +80,63 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-
-  UIAlertView *alert = [[UIAlertView alloc]init];
-  UIImage *image;
-  CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
-  if ([UIScreen mainScreen].scale == 2.f && screenHeight == 568.0f) {
-    alert.delegate = self;
-    alert.title = @"retina";
-    [alert addButtonWithTitle:@"cancel"];
-    [alert addButtonWithTitle:@"yes"];
-    alert.cancelButtonIndex = 0;
-    
-    image = [UIImage imageNamed:@"p-568@2x.png"];
-  } else {
-    alert.title = @"3gs";
-    image = [UIImage imageNamed:@"p.png"];
-  }
-  [alert show];
-  self.view.backgroundColor = [UIColor colorWithPatternImage:image];
-//  UIImage *bgImage = [UIImage imageNamed:@"p.png"];
+  
+  //  UIAlertView *alert = [[UIAlertView alloc]init];
+//  UIImage *image;
+//  CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+//  if ([UIScreen mainScreen].scale == 2.f && screenHeight == 568.0f) {
+//    alert.delegate = self;
+//    alert.title = @"retina";
+//    [alert addButtonWithTitle:@"cancel"];
+//    [alert addButtonWithTitle:@"yes"];
+//    alert.cancelButtonIndex = 0;
+//    image = [UIImage imageNamed:@"p-568h@2x.png"];
+//  } else {
+//    alert.title = @"3gs";
+//    [alert addButtonWithTitle:@"cancel"];
+//    [alert addButtonWithTitle:@"yes"];
+//    alert.cancelButtonIndex = 0;
+//    image = [UIImage imageNamed:@"p.png"];
+//  }
+//  [alert show];
+  NSString *bgImgPath = [[NSBundle mainBundle] pathForResource:@"p" ofType:@"png"];
+  UIImageView *bgImg = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:bgImgPath]];
+  [self.view addSubview:bgImg];
+  
+//  self.view.backgroundColor = [UIColor colorWithPatternImage:image];
 //  UIView *backgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
 //  backgroundView.backgroundColor = [UIColor blackColor];
 //  self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
   
-//  backgroundView.backgroundColor = [UIColor colorWithPatternImage:bgImage];
-  //[bgImage release];
-  //logo backgroundimage etc
-  //login textfield
+//  NSString *loginBtnPath = [[NSBundle mainBundle] pathForResource:@"login_btn" ofType:@"png"];
+//  UIImageView *loginBtn = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:loginBtnPath]];
+//  loginBtn.frame = CGRectMake(65, 250, 175, 25);
+  
+//  NSString *acBtnPath = [[NSBundle mainBundle] pathForResource:@"create_btn" ofType:@"png"];
+//  UIImageView *acBtn = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:acBtnPath]];
+//  acBtn.frame = CGRectMake(65, 300, 175, 25);
+  
+  UIImage *login = [UIImage imageNamed:@"login_btn.png"];
+  UIButton *loginButton = [[[UIButton alloc] initWithFrame:CGRectMake(65, 250, 175, 25)] autorelease];
+  [loginButton setContentMode:UIViewContentModeScaleAspectFill];
+  [loginButton setImage:login forState:UIControlStateNormal];
+  [loginButton addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
+  
+  UIImage *account = [UIImage imageNamed:@"create_btn.png"];
+  UIButton *createButton = [[[UIButton alloc] initWithFrame:CGRectMake(65, 300, 175, 25)] autorelease];
+  [createButton setContentMode:UIViewContentModeScaleAspectFill];
+  [createButton setImage:account forState:UIControlStateNormal];
+  [createButton addTarget:self action:@selector(accountCreate:) forControlEvents:UIControlEventTouchUpInside];
+  
   _idTextField = [self makeIdTextField:CGRectMake(10, 150, 300, 32) text:@"yamada"];
   _pwTextField = [self makePassTextField:CGRectMake(10, 200, 300, 32) text:@"yamada10"];
-  UIButton *btn = [self makeButton:CGRectMake(60, 250, 200, 40) text:@"login" tag:BTN_LOGIN];
-  
-  [self.view addSubview:btn];
+  //UIButton *btn = [self makeButton:CGRectMake(60, 250, 200, 40) text:@"login" tag:BTN_LOGIN];
+ 
   [self.view addSubview:_idTextField];
   [self.view addSubview:_pwTextField];
-
+  [self.view addSubview:loginButton];
+  [self.view addSubview:createButton];
+//  [self.view addSubview:acBtn];
 }
 
 - (void)login:(id)sender {
@@ -143,6 +164,17 @@
 //  [self.delegate login:nil];
 }
 
+- (void)accountCreate:(id)sender {
+  LOG(@"accountCreate");
+  AccountCreateWebView *webView = [[AccountCreateWebView alloc] init];
+//  UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:webView];
+  
+  webView.delegate = self;
+//  [webView setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+  [self.navigationController pushViewController:webView animated:YES];
+  [webView release];
+}
+
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
   NSMutableData *success = [NSMutableData data];
   LOG(@"success:%@",success);
@@ -161,5 +193,10 @@
   }
 }
 
+- (void)accountCreateRetrun {
+  LOG(@"accountCreate");
+  [self.navigationController setNavigationBarHidden:YES];
+  [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end

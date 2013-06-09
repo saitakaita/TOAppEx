@@ -29,7 +29,7 @@
   UIImage *bgImage = [UIImage imageNamed:@"background.png"];
   self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
 //  self.view.backgroundColor = [UIColor whiteColor];
-  
+  self.navigationController.navigationBar.tintColor = [UIColor blackColor];
   UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
   self.navigationItem.rightBarButtonItem = doneButton;
   [doneButton release];

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AccountCreateWebView.h"
 
 @class UserId;
 
@@ -15,9 +16,10 @@
 
 @end
 
-@interface TOLogin : UIViewController <UITextFieldDelegate> {
+@interface TOLogin : UIViewController <UITextFieldDelegate,AccountCreateWebViewDelegate> {
   UITextField *_idTextField;
   UITextField *_pwTextField;
+  UINavigationController *_navi;
 }
 @property (nonatomic, assign) id<TLoginDelegate>delegate;
 @property (nonatomic, retain) UserId *idPass;

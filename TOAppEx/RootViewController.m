@@ -25,9 +25,12 @@
   
   if (flagTest == nil) {
     TOLogin *login = [[TOLogin alloc] init];
+    UINavigationController *navigationCtr = [[UINavigationController alloc] initWithRootViewController:login];
+    navigationCtr.navigationBarHidden = YES;
     login.delegate = self;
     [login setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-    [self presentViewController:login animated:NO completion:nil];
+    [self presentViewController:navigationCtr animated:NO completion:nil];
+    [login release];
   }
   self.title = @"Menu";
   
