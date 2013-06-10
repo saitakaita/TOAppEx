@@ -24,6 +24,7 @@
   [_reloadButton      release];
   [_backButton        release];
   [_fowardButton      release];
+ 
   
   [super dealloc];
 }
@@ -47,6 +48,7 @@
   _backButton   = [[UIBarButtonItem alloc] initWithTitle:@"back" style:UIBarButtonItemStyleBordered target:self action:@selector(backDidPush)];
   _fowardButton = [[UIBarButtonItem alloc] initWithTitle:@"foward" style:UIBarButtonItemStyleBordered target:self action:@selector(fowardDidPush)];
   _homeButton   = [[UIBarButtonItem alloc] initWithTitle:@"home" style:UIBarButtonItemStyleBordered target:self action:@selector(tohome:)];
+//  _homeButton   = [[UIBarButtonItem alloc] initWithTitle:@"home" style:UIBarButtonItemStyleBordered target:self action:@selector(tohome)];
   
   NSArray *buttons = [NSArray arrayWithObjects:_backButton, _fowardButton, _reloadButton, _homeButton, nil];
   tb.items = buttons;
@@ -71,10 +73,20 @@
 }
 
 - (void)tohome:(id)sender {
-  WebSearchController *dialog = [[WebSearchController alloc] init];
-  dialog.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-  [self presentViewController:dialog animated:YES completion:NULL];
+//  WebSearchController *dialog = [[WebSearchController alloc] init];
+//  dialog.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+//  [dialog.navigationController setNavigationBarHidden:NO];
+//  [self presentViewController:dialog animated:YES completion:NULL];
+  //modalを閉じる修正、上記の方法は新しくインスタンスを生成しているのでNG。
+  [self dismissViewControllerAnimated:YES completion:nil];
+  LOG(@"modalclose");
+  [self.delegate homePush];
 }
+
+//- (void)tohome {
+//  LOG(@"tohome");
+//  [self.delegate homeReturn];
+//}
 
 - (void)reloadDidPush {
   [_wv reload];
