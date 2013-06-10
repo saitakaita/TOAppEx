@@ -7,11 +7,12 @@
 //
 
 #import "WebSearchController.h"
-#import "WebViewController.h"
+//#import "WebViewController.h"
 
 @interface WebSearchController ()
 
 @property (retain, nonatomic) UITableView *tableView;
+- (void)homePush;
 
 @end
 
@@ -134,22 +135,26 @@
   wArray = [[[NSMutableArray alloc] init] autorelease];
   NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
   NSString *dir  = [paths objectAtIndex:0];
-  FMDatabase *db = [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"search.sqlite"]];
+  FMDatabase *db = [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"searchLog.sqlite"]];
+  LOG(@"dataPath:%@",paths);
   [db open];
-
+  
   for (int i=0; i < [dateSection count]; i++) {
     if (indexPath.section == i) {
       FMResultSet *fResult = [db executeQuery:@"select * from words where date = ? order by id desc",[dateSection objectAtIndex:i]];
       while ([fResult next]) {
         iData = [fResult stringForColumn:@"words"];
         [wArray addObject:iData];
+        LOG(@"wArray:%@",wArray);
       }
       for (int m=0; m < [wArray count]; m++) {
         if (indexPath.row == m) {
           WebViewController *dialog = [[WebViewController alloc] init];
           dialog.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
           dialog.encode_word = [NSString stringWithString:[Util urlencode:[wArray objectAtIndex:m]]];
-          [self presentViewController:dialog animated:YES completion:NULL];
+//          [self presentViewController:dialog animated:YES completion:NULL];
+          [dialog.navigationController setNavigationBarHidden:NO];
+          [self presentViewController:dialog animated:YES completion:nil];
         }
       }
     }
@@ -159,6 +164,7 @@
 
 - (void)hoge:(UITextField *)textField {
   LOG(@"hoge:text--%@",textField);
+  [textField resignFirstResponder];
   NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
   NSString *dir  = [paths objectAtIndex:0];
   FMDatabase *db = [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"searchLog.sqlite"]];
@@ -183,6 +189,7 @@
   [db close];
   
   WebViewController *dialog = [[WebViewController alloc] init];
+  dialog.delegate = self;
   dialog.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
   dialog.encode_word = [NSString stringWithString:[Util urlencode:strWords]];
   [self presentViewController:dialog animated:YES completion:NULL];
@@ -197,6 +204,11 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
   
   return (toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (void)homePush {
+  LOG(@"homePush");
+  [self viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning

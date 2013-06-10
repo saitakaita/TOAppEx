@@ -27,6 +27,7 @@
     TOLogin *login = [[TOLogin alloc] init];
     UINavigationController *navigationCtr = [[UINavigationController alloc] initWithRootViewController:login];
     navigationCtr.navigationBarHidden = YES;
+    
     login.delegate = self;
     [login setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
     [self presentViewController:navigationCtr animated:NO completion:nil];

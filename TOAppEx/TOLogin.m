@@ -117,13 +117,13 @@
 //  acBtn.frame = CGRectMake(65, 300, 175, 25);
   
   UIImage *login = [UIImage imageNamed:@"login_btn.png"];
-  UIButton *loginButton = [[[UIButton alloc] initWithFrame:CGRectMake(65, 250, 175, 25)] autorelease];
+  UIButton *loginButton = [[[UIButton alloc] initWithFrame:CGRectMake(([UIScreen mainScreen].bounds.size.width - 175) /2, 250, 175, 25)] autorelease];
   [loginButton setContentMode:UIViewContentModeScaleAspectFill];
   [loginButton setImage:login forState:UIControlStateNormal];
   [loginButton addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
   
   UIImage *account = [UIImage imageNamed:@"create_btn.png"];
-  UIButton *createButton = [[[UIButton alloc] initWithFrame:CGRectMake(65, 300, 175, 25)] autorelease];
+  UIButton *createButton = [[[UIButton alloc] initWithFrame:CGRectMake(([UIScreen mainScreen].bounds.size.width - 175) /2, 300, 175, 25)] autorelease];
   [createButton setContentMode:UIViewContentModeScaleAspectFill];
   [createButton setImage:account forState:UIControlStateNormal];
   [createButton addTarget:self action:@selector(accountCreate:) forControlEvents:UIControlEventTouchUpInside];
